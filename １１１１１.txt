@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025年度 韓国語学科 クラス分けテスト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2025年度 韓国語学科 クラス分けテスト</h1>
+        <form id="examForm">
+            <!-- 1~10問 -->
+            <div class="question">
+                <p>1. 春</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> 가을</label>
+                    <label><input type="radio" name="q1" value="b"> 겨울</label>
+                    <label><input type="radio" name="q1" value="c"> 봄</label>
+                    <label><input type="radio" name="q1" value="d"> 여름</label>
+                </div>
+            </div>
+            <!-- Add more questions 2~20 in the same format -->
+
+            <!-- 21~25 (Short answer questions) -->
+            <div class="question">
+                <p>21. 韓国語で自己紹介を書いてください。（30字以上）</p>
+                <textarea name="q21" rows="4" style="width: 100%;"></textarea>
+            </div>
+
+            <div class="question">
+                <p>22. 次の文章を韓国語で書いてください。<br>「私は昨日、友達とカフェでコーヒーを飲みました。」</p>
+                <textarea name="q22" rows="4" style="width: 100%;"></textarea>
+            </div>
+
+            <!-- Add questions 23~25 in the same format -->
+
+            <button type="button" onclick="submitExam()">送信</button>
+        </form>
+    </div>
+
+    <script>
+        function submitExam() {
+            const form = document.getElementById('examForm');
+            const formData = new FormData(form);
+
+            let answers = {};
+            for (let [key, value] of formData.entries()) {
+                answers[key] = value;
+            }
+
+            console.log('回答:', answers);
+            alert('回答が送信されました！');
+        }
+    </script>
+</body>
+</html>
